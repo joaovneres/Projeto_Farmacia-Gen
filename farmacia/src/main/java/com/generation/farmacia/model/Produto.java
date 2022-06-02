@@ -6,7 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -24,14 +26,14 @@ public class Produto {
 	@Size(min=5, max=100)
 	private String nomeProduto;
 	
-	@NotBlank
-	private Double valorProduto;
+	@NotNull
+	private int valorProduto;
 	
-	@NotBlank
-	private Double valorCompraProduto;
+	@NotNull
+	private int valorCompraProduto;
 	
-	@NotBlank
-	private Integer qtdProduto;
+	@NotNull
+	private int qtdProduto;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("oProduto")
@@ -61,20 +63,16 @@ public class Produto {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public Double getValorProduto() {
-		return valorProduto;
-	}
-
-	public void setValorProduto(Double valorProduto) {
+	public void setValorProduto(int valorProduto) {
 		this.valorProduto = valorProduto;
 	}
 
-	public Double getValorCompraProduto() {
-		return valorCompraProduto;
+	public void setValorCompraProduto(int valorCompraProduto) {
+		this.valorCompraProduto = valorCompraProduto;
 	}
 
-	public void setValorCompraProduto(Double valorCompraProduto) {
-		this.valorCompraProduto = valorCompraProduto;
+	public void setQtdProduto(int qtdProduto) {
+		this.qtdProduto = qtdProduto;
 	}
 
 	public Integer getQtdProduto() {

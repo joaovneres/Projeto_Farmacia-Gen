@@ -21,7 +21,7 @@ import com.generation.farmacia.model.Categoria;
 import com.generation.farmacia.repository.CategoriaRepository;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin("*")
 @RequestMapping("/categoria")
 public class CategoriaController {
 
